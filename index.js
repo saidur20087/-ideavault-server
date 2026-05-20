@@ -369,8 +369,8 @@ async function run() {
     // =========================
     // DB CONNECT
     // =========================
-    await client.db("admin").command({ ping: 1 });
-    console.log("MongoDB Connected Successfully 🚀");
+    // await client.db("admin").command({ ping: 1 });
+    console.log("MongoDB Connected Successfully ");
   } catch (error) {
     console.error("DB Connection Error:", error);
   }
