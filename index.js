@@ -8,7 +8,9 @@ const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-   origin :["https://ideavault-client-olive.vercel.app"],credentials:true
+  origin: [
+    "http://localhost:3000",
+    "https://ideavault-client-olive.vercel.app"], credentials: true
 }));
 app.use(express.json());
 
@@ -272,6 +274,11 @@ async function run() {
       res.send({ comments: idea.comments });
     });
 
+
+    // =========================
+    // UPDATE IDEA
+    // =========================
+
     app.put("/api/user/update", async (req, res) => {
       try {
         const { email, name, image } = req.body;
@@ -389,5 +396,4 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
 
